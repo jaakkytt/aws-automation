@@ -18,16 +18,12 @@ If you're on Windows, you might want to [download the ZIP archive]( https://gith
 
 ### 3. Run the Docker container
 
--v thing is important here. passing the path to your
-pull the latest image
-
-Pull the latest image and run the container passing the path to your local clone of the aws-automation repo  .
-On OS X and Ubuntu.
-Make sure you have the latest
-When running the container pass the full path to
-passing the full path to the repo clone as the argument.
+Pull the latest image.
 
     $ docker pull taavitani/aws-automation:latest
+
+And run the container. Use `-v` to mount the `/root/aws-automation` volume from the host.
+
     $ docker run -it -v /path/to/repo/clone:/root/aws-automation taavitani/aws-automation
 
 If you're on Windows.
