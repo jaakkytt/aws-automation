@@ -14,6 +14,8 @@ Once you're on the *Users* page find your AWS account from the list. Open the *S
 
 ### 2. Clone the [b4nk/aws-automation](https://github.com/b4nk/aws-automation.git) repo
 
+    $ git clone https://github.com/b4nk/aws-automation.git /path/to/repo/clone
+
 If you're on Windows, you might want to [download the ZIP archive]( https://github.com/b4nk/aws-automation/archive/master.zip) instead. This is to avoid problems with Git converting line endings.
 
 ### 3. Run the Docker container
@@ -22,7 +24,7 @@ Pull the latest image.
 
     $ docker pull taavitani/aws-automation:latest
 
-And run the container. Use `-v` to mount the `/root/aws-automation` volume from the host.
+And run the container mounting your repo clone using the `-v` option.
 
     $ docker run -it -v /path/to/repo/clone:/root/aws-automation taavitani/aws-automation
 
@@ -31,11 +33,11 @@ If you're on Windows.
     PS > .\docker.exe pull taavitani/aws-automation:latest
     PS > .\docker.exe run -it -v /c/path/to/repo/clone:/root/aws-automation taavitani/aws-automation
 
-Make sure that the repo clone is correctly mounted. The contents of the folder should be accessible from the container.
+If the repo clone was successfully mounted you should see the contents in the container.
 
     ~/aws-automation# ls
 
-### 4. Configre AWS credentials and region
+### 4. Configure AWS credentials and region
 
 Run the AWS `config` command. You'll need your *AWS Access Key ID* and *AWS Secret Access Key* from the `credentials.csv` file you downloaded earlier. Also set the default region to `eu-central-1`.
 
