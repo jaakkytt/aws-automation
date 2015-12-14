@@ -22,7 +22,7 @@
   ],
   "provisioners": [
     {
-      "this": "need work"
+      TODO
     },
     {
       "type": "shell",
