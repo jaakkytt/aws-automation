@@ -1,0 +1,28 @@
+{
+  "description": "Lab 1: Simple EBS builder template",
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "ssh_username": "ubuntu",
+      "region": "eu-central-1",
+      "ami_name": "lab-1 {{isotime \"2006-01-02 15:04:06\" | clean_ami_name}}",
+      "source_ami": "ami-02392b6e",
+      "instance_type": "t2.micro",
+      "ami_description": "Lab 1 {{isotime}}",
+      "tags": {
+        "b4nk:project": "aws-automation"
+      },
+      "force_deregister": "true"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "sudo -n -E sh -eux '{{.Path}}'",
+      "scripts": [
+        "ebs-builder/scripts/box_build_time.sh",
+        "ebs-builder/scripts/install_cowsay.sh"
+      ]
+    }
+  ]
+}
