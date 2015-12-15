@@ -1,7 +1,7 @@
 # AWS Infrastructure Automation Hands-on
 
 - [Lab 1 - Packer](lab-1/)
-- [Lab 2 - Packer](lab-2/)
+- [Lab 2 - Terraform](lab-2/)
 
 ## Getting Started
 
