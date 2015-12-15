@@ -1,6 +1,7 @@
 # AWS Infrastructure Automation Hands-on
 
 - [Lab 1 - Packer](lab-1/)
+- [Lab 2 - Packer](lab-2/)
 
 TODO lab-2 lab-3
 
