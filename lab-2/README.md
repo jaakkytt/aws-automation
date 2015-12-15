@@ -24,8 +24,6 @@ When you've completed editing the `variables.tf` file, run the `copy-variables-f
 
 ## Create the VPC
 
-TODO Security Group
-
 Let's start by creating the VPC and it's associated resources as defined in `01-vpc/aws.tf`. The same file will be repeating for all subsequent steps (02-single-instance/aws.tf has exactly the same contents etc.). That is the VPC configuration will remain unchanged throughout the rest of the lab.
 
 First run `plan` to get a sense of what Terraform will do.
