@@ -92,4 +92,12 @@ Finally destroy the instance.
 
 # Extra: Building a Vagrant Box with Packer
 
-TODO
+> This part is optional and assumes familiarity with Vagrant. You also need Packer and other tools installed on your laptop.
+
+1. Create a clone of the [Bento project repo](https://github.com/chef/bento). This has a ton of awesome Packer templates for building Vagrant boxes. For example the [Ubuntu Trusty template](https://github.com/chef/bento/blob/master/ubuntu-14.04-amd64.json).
+
+2. Start the Packer build. Adjust the command if you're using VMWare: `-only=vmware-iso`. Note that this will probably take a while.
+
+    $ packer build -only=virtualbox-iso ubuntu-14.04-amd64.json
+
+3. Now you have a Ubuntu Trusty Vagrant box in the `../builds` directory. Run `vagrant box add -name lab-1 ../builds/ubuntu-14.04.*.box` and `vagrant init lab-1; vagrant up` to test.
