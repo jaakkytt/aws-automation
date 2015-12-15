@@ -1,6 +1,6 @@
 # Lab 2 - Terraform
 
-In this lab you'll be using Terraform to bring up a web server cluster on EC2.
+In this lab you'll be using [Terraform](https://www.terraform.io) to bring up a web server cluster on EC2.
 
 A quick note about how this lab is set up. We've split the process of creating the infrastructure into stages. For each stage there is a directory with it's Terraform configuration for creating the infrastructure in that stage. So the configuration is built up step-by-step by adding (and in some cases modifying) configuration with each stage. You could `diff` the `main.tf` files between stages to check what changed.
 
