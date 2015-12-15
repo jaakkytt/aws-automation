@@ -3,8 +3,6 @@
 - [Lab 1 - Packer](lab-1/)
 - [Lab 2 - Packer](lab-2/)
 
-TODO lab-2 lab-3
-
 ## Getting Started
 
 Lab setup is identical to the one we used for *AWS Bootcamp*. We only assume that you have Docker installed on your laptop. Windows and OS X users refer to [AWS Bootcamp materials](https://github.com/b4nk/aws-bootcamp) if you need a refresher on Docker Machine.
