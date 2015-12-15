@@ -31,12 +31,12 @@ variable "subdomain" {
   default = "edit-this-as-well"
 }
 
-//EDIT The DNSimple email associated with the token
+//EDIT! The DNSimple email associated with the token
 variable "dnsimple_email" {
-  default = "123456@api.dnsimple.com"
+  default = "edit-this-as-well"
 }
 
-//EDIT  The DNSimple API token
+//EDIT!  The DNSimple API token
 variable "dnsimple_token" {
-  default = "SuperSecret"
+  default = "edit-this-as-well"
 }
