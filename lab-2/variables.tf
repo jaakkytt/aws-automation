@@ -25,3 +25,18 @@ variable "aws_amis" {
     eu-west-1       = "ami-6514ce16"
   }
 }
+
+//EDIT! A unique name for your subdomain. For example firstname-lastname.
+variable "subdomain" {
+  default = "edit-this-as-well"
+}
+
+//EDIT The DNSimple email associated with the token
+variable "dnsimple_email" {
+  default = "123456@api.dnsimple.com"
+}
+
+//EDIT  The DNSimple API token
+variable "dnsimple_token" {
+  default = "SuperSecret"
+}
