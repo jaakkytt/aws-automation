@@ -14,7 +14,11 @@ A quick note about how this lab is set up. We've split the process of creating t
 
 ## Terraform variables
 
-Edit the lab-2/variables.tf file and update the default values for `aws_key_name` and `project_name`. You'll find instructions in the file. And run the `copy-variables-file.sh` script. You now should have the same `variables.tf` file in each subdirectory of `lab-2`.
+Edit the lab-2/variables.tf file and update the default values for `aws_key_name` and `project_name`. You'll also be provided with credentials for the DNSimple service: `dnsimple_email` and `dnsimple_token`. Edit those accordingly.
+
+One last variable: `subdomain`. This gets used in the last step for creating a DNS record. So please choose a value that would be suitable for this. If not sure then stick to alphanumeric characters and dashes.
+
+When you've completed editing the `variables.tf` file, run the `copy-variables-file.sh` script. You now should have the same `variables.tf` file in each subdirectory of `lab-2`.
 
     ~/aws-automation/lab-2# bash copy-variables-file.sh
 
@@ -104,7 +108,12 @@ And you might want to use the [Load Balancers page on the EC2 Console](https://e
 
 ## Create DNS records
 
-TODO
+The final step is to create a DNS record pointing to your web server cluster. Run through plan-apply as usual to make it happen.
+
+    ~/aws-automation/lab-2# terraform plan 05-dns/
+    ~/aws-automation/lab-2# terraform apply 05-dns/
+
+Output should include the new DNS name for accessing your web server cluster. Try opening the hostname in your browser.
 
 ## Destroy the provisioned infrastructure
 
