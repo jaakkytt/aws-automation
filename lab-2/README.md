@@ -6,11 +6,11 @@ A quick note about how this lab is set up. We've split the process of creating t
 
 ## Relevant Documentation
 
-[AWS: What is Amazon VPC?](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html)
-[AWS: Elastic Load Balancing](https://aws.amazon.com/elasticloadbalancing/)
-[Terraform: Commands (CLI)](https://www.terraform.io/docs/commands/index.html)
-[Terraform: AWS Provider](https://www.terraform.io/docs/providers/aws/index.html)
-[Terraform: DNSimple Provider](https://www.terraform.io/docs/providers/dnsimple/index.html)
+- [AWS: What is Amazon VPC?](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html)
+- [AWS: Elastic Load Balancing](https://aws.amazon.com/elasticloadbalancing/)
+- [Terraform: Commands (CLI)](https://www.terraform.io/docs/commands/index.html)
+- [Terraform: AWS Provider](https://www.terraform.io/docs/providers/aws/index.html)
+- [Terraform: DNSimple Provider](https://www.terraform.io/docs/providers/dnsimple/index.html)
 
 ## Terraform variables
 
