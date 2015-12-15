@@ -1,16 +1,16 @@
 # Lab 2 - Terraform
 
-TODO
-a small web server cluster on ec2
-directory structure
-broke this down into stages
-repeating content. incremental
-diff
+In this lab you'll be using Terraform to bring up a web server cluster on EC2.
+
+A quick note about how this lab is set up. We've split the process of creating the infrastructure into stages. For each stage there is a directory with the Terraform configuration for creating the infrastructure in that stage. So the Terraform configuration is built up step-by-step by adding (and in some cases modifying) configuration with each stage. You could `diff` the `main.tf` files between stages to check what changed.
 
 ## Relevant Documentation
 
-TODO: ELB VPC
-[Terraform Documentation](https://www.terraform.io/docs/index.html)
+[AWS: What is Amazon VPC?](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html)
+[AWS: Elastic Load Balancing](https://aws.amazon.com/elasticloadbalancing/)
+[Terraform: Commands (CLI)](https://www.terraform.io/docs/commands/index.html)
+[Terraform: AWS Provider](https://www.terraform.io/docs/providers/aws/index.html)
+[Terraform: DNSimple Provider](https://www.terraform.io/docs/providers/dnsimple/index.html)
 
 ## Terraform variables
 
@@ -48,7 +48,7 @@ Running `plan` again after the `apply` operation has completed should be interes
     terraform plan 02-single-instance/
     Plan: 1 to add, 0 to change, 0 to destroy.
 
-You might want to check out the [VPC Console]( https://eu-central-1.console.aws.amazon.com/vpc/home#vpcs:) to get a better sense of infrastructure build in this step. Use the configured project name to find your VPC.
+You might want to check out the [VPC Console]( https://eu-central-1.console.aws.amazon.com/vpc/home#vpcs:) to get a better sense of infrastructure build in this step. Use the project name you set in `variables.tf` to find your VPC.
 
 ## Create a single EC2 instance
 
@@ -98,7 +98,9 @@ And before we run `apply` we have to taint the instance carried over from the pr
     ~/aws-automation/lab-2# terraform taint aws_instance.lab-2-web.0
     ~/aws-automation/lab-2# terraform apply 04-load-balancer/
 
-Output should now include also the ELB address. Wait for instances to boot and provisioning code to finish it's work. It also takes a bit for instances to be added to the LB. Open the address in your browser and hit refresh like crazy. You should see the LB rotating your requests to different instances.
+Output should now also include the ELB address. Wait for instances to boot and provisioning code to finish it's work. It also takes a bit for instances to be added to the LB. Open the address in your browser and hit refresh like crazy. You should see the LB rotating your requests to different instances.
+
+And you might want to use the [Load Balancers page on the EC2 Console](https://eu-central-1.console.aws.amazon.com/ec2/#LoadBalancers:) to check the ELB you just created.
 
 ## Create DNS records
 
@@ -106,6 +108,6 @@ TODO
 
 ## Destroy the provisioned infrastructure
 
-Finally clean up and kill all resources created during this lab. Terraform makes this easy:
+Finally clean up and kill all resources you have created. Terraform makes this really easy:
 
     ~/aws-automation/lab-2# terraform destroy
