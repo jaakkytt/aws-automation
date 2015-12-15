@@ -51,3 +51,19 @@ resource "aws_elb" "lab-2-web" {
 
 output "elb-address" { value = "${aws_elb.lab-2-web.dns_name}" }
 output "instance-ips" { value = "${join(", ", aws_instance.lab-2-web.*.public_ip)}"}
+
+provider "dnsimple" {
+  email = "${var.dnsimple_email}"
+  token = "${var.dnsimple_token}"
+}
+
+resource "dnsimple_record" "lab-2-web" {
+  domain = "b4nk.systems"
+  name   = "${var.subdomain}"
+  value  = "${aws_elb.lab-2-web.dns_name}"
+  type   = "CNAME"
+  ttl    = 30
+}
+
+output "load balancer DNS record:" { value = "${dnsimple_record.lab-2-web.hostname}" }
+
